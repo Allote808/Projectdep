@@ -1,0 +1,352 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Navbar stilləri */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    width: 40%;
+}
+
+.search-container input {
+    flex-grow: 1;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-container button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #2980b9;
+}
+
+.add-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #219653;
+}
+
+/* Modal stilləri */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.image-preview {
+    width: 100%;
+    height: 200px;
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+}
+
+.image-preview p {
+    color: #7f8c8d;
+}
+
+.save-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.save-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Konfirmasiya modal stilləri */
+.confirm-modal {
+    text-align: center;
+}
+
+.confirm-icon {
+    font-size: 3rem;
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+.confirm-message {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Qalereya stilləri */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-info {
+    padding: 15px;
+}
+
+.gallery-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.gallery-date, .gallery-description {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.time-badge {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+/* Şəkil detalları modal stilləri */
+.detail-modal .modal {
+    width: 700px;
+    max-width: 95%;
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.detail-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.detail-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.detail-description {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Emoji reaksiya stilləri */
+.emoji-reactions {
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.emoji-title {
+    margin-right: 10px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.emoji-container {
+    display: flex;
+    gap: 5px;
+}
+
+.emoji-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 5px;
+}
+
+.emoji-btn:hover {
+    transform: scale(1.2);
+}
+
+.emoji-btn.active {
+    background-color: #f1f1f1;
+    border-radius: 50%;
+}
+
+.emoji-count {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-size: 0.9rem;
+}
+
+.emoji-count span {
+    margin-right: 5px;
+}
+
+.emoji-count-number {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.gallery-emoji-counts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.gallery-emoji-count {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.gallery-emoji-count span {
+    margin-right: 3px;
+}

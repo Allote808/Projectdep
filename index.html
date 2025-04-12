@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="logo">Şəkil Qalereyası</div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Şəkil adı ilə axtar...">
+            <button id="search-btn">Axtar</button>
+        </div>
+        <button class="add-btn" id="add-image-btn">Şəkil əlavə et</button>
+    </div>
+
+    <!-- Qalereya -->
+    <div class="gallery" id="gallery-container">
+        <!-- Şəkillər JavaScript ilə bura əlavə olunacaq -->
+    </div>
+
+    <!-- Şəkil əlavə etmə modalı -->
+    <div class="modal-overlay" id="add-modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Şəkil əlavə et</div>
+                <button class="close-btn" id="add-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="image-preview" id="image-preview">
+                    <p>Şəkil seçilməyib</p>
+                    <img id="preview-image" src="" alt="">
+                </div>
+                <div class="form-group">
+                    <label for="image-upload">Şəkil seç</label>
+                    <input type="file" id="image-upload" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="image-name">Şəkil adı</label>
+                    <input type="text" id="image-name" placeholder="Şəkilə bir ad verin">
+                </div>
+                <div class="form-group">
+                    <label for="image-description">Şəkil haqqında</label>
+                    <textarea id="image-description" placeholder="Şəkil haqqında məlumat yazın"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image-date">Tarix</label>
+                    <input type="date" id="image-date">
+                </div>
+                <button class="save-btn" id="save-image-btn">Yadda saxla</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konfirmasiya modalı -->
+    <div class="modal-overlay" id="confirm-modal-overlay">
+        <div class="modal confirm-modal">
+            <div class="modal-header">
+                <div class="modal-title">Uğurlu əməliyyat</div>
+                <button class="close-btn" id="confirm-modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="confirm-icon">✓</div>
+                <div class="confirm-message">Hər şey əlavə edildi!</div>
+                <button class="save-btn" id="confirm-ok-btn">Tamam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Şəkil detalları modalı -->
+    <div class="modal-overlay detail-modal" id="detail-modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Şəkil detalları</div>
+                <button class="close-btn" id="detail-modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="detail-content">
+                <!-- Şəkil detalları JavaScript ilə bura əlavə olunacaq -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
